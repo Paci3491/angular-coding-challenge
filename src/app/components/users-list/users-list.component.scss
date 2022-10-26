@@ -1,6 +1,9 @@
 .card {
-  width: 70vw;
+  width: 40vw;
   margin: 2rem auto;
+  .card-title {
+    font-size: 25px;
+  }
   img {
     align-self: center;
     width: 8rem;

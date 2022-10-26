@@ -1,12 +1,13 @@
 <div class="detail-wrapper">
 
   <div *ngIf="isLoading" class="spinner-wrapper">
-    <div class="spinner-border spinner" role="status"></div>
+    <div class="spinner-border text-primary spinner" role="status"></div>
   </div>
 
   <div @fade *ngIf="!isLoading" class="card shadow-lg">
     <img [src]="userDetail.profilePicture" class="card-img-top" [alt]="userDetail.name + 's profile picture'">
     <h5 class="card-title"> {{userDetail.name}} </h5>
     <p class="card-text" [innerHTML]="userDetail.bio | markup"></p>
+    <button class="btn btn-primary container-fluid" (click)="redirectBack()"> Back to List </button>
   </div>
 </div>

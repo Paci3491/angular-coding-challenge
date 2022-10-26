@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserData } from '../../../model/user-data';
 import { finalize } from 'rxjs';
 import { fadeIn } from '../../../utils/animations';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-detail',
@@ -19,6 +20,7 @@ export class UserDetailComponent implements OnInit {
 
   constructor(private userService: UserService,
               private router: Router,
+              private location: Location,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -41,5 +43,9 @@ export class UserDetailComponent implements OnInit {
     }, () => {
       this.router.navigate([''])
     });
+  }
+
+  redirectBack() {
+    this.location.back();
   }
 }
