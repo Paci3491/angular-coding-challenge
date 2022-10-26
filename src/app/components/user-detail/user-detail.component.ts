@@ -3,17 +3,19 @@ import { UserService } from '../../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserData } from '../../../model/user-data';
 import { finalize } from 'rxjs';
+import { fadeIn } from '../../../utils/animations';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  styleUrls: ['./user-detail.component.scss'],
+  animations: [ fadeIn ]
 })
 export class UserDetailComponent implements OnInit {
 
-  userId: string = '';
-  userDetail!: UserData;
-  isLoading = false;
+  private userId!: string;
+  public userDetail!: UserData;
+  public isLoading = false;
 
   constructor(private userService: UserService,
               private router: Router,
@@ -25,13 +27,13 @@ export class UserDetailComponent implements OnInit {
     this.getUser();
   }
 
-  getUserId(): void {
+  private getUserId(): void {
     this.route.params.subscribe(params => {
       this.userId = params['id'];
     })
   }
 
-  getUser(): void {
+  private getUser(): void {
     this.userService.findOneById(+this.userId)
       .pipe(finalize(() => this.isLoading = false))
       .subscribe((detail: UserData) => {

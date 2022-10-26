@@ -1,22 +1,18 @@
-<!--<div class="list-wrapper">-->
+<div *ngIf="!users$" class="spinner-wrapper">
+  <div class="spinner-border spinner" role="status"></div>
+</div>
 
-  <div *ngIf="!users$" class="spinner-border spinner" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+<ng-container *ngIf="users$ | async as users">
+  <div @fade class="card mb-4 p-4 shadow-lg" *ngFor="let user of users">
+    <div class="row g-0">
+      <img [src]="user.profilePicture" class="img-fluid" [alt]="user.name + 's profile picture'">
 
-  <ng-container *ngIf="users$ | async as users">
-    <div class="card mb-4 p-4 shadow-lg" *ngFor="let user of users">
-      <div class="row g-0">
-        <img [src]="user.profilePicture" class="img-fluid" [alt]="user.name + 's profile picture'">
-
-        <div class="col-md-8 col-lg-9">
-          <div class="card-body">
-            <h5 class="card-title">{{user.name}}</h5>
-            <button class="btn btn-primary" (click)="redirectToDetail(user.id)">Show profile</button>
-          </div>
+      <div class="col-md-8 col-lg-9">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <button class="btn btn-primary" (click)="redirectToDetail(user.id)">Show profile</button>
         </div>
       </div>
     </div>
-  </ng-container>
-
-<!--</div>-->
+  </div>
+</ng-container>

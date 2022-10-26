@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { MarkupPipe } from '../utils/markup.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MarkupPipe } from '../utils/markup.pipe';
   imports: [
     RouterModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

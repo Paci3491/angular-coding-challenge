@@ -14,3 +14,19 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+// SPINNER
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .spinner {
+    width: 5rem;
+    height: 5rem;
+  }
+}
