@@ -1,15 +1,14 @@
-<div class="list-wrapper">
+<!--<div class="list-wrapper">-->
 
   <div *ngIf="!users$" class="spinner-border spinner" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 
   <ng-container *ngIf="users$ | async as users">
-    <div class="card mb-2" *ngFor="let user of users">
+    <div class="card mb-4 p-4 shadow-lg" *ngFor="let user of users">
       <div class="row g-0">
-        <div class="col-md-4 col-lg-3">
-          <img [src]="user.profilePicture" class="img-fluid rounded-start" [alt]="user.name + 's profile picture'">
-        </div>
+        <img [src]="user.profilePicture" class="img-fluid" [alt]="user.name + 's profile picture'">
+
         <div class="col-md-8 col-lg-9">
           <div class="card-body">
             <h5 class="card-title">{{user.name}}</h5>
@@ -20,4 +19,4 @@
     </div>
   </ng-container>
 
-</div>
+<!--</div>-->

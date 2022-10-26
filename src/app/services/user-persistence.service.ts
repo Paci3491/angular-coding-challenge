@@ -21,6 +21,30 @@ const INITIAL_DATA: readonly UserData[] = [
 I am a horse.
     `,
     profilePicture: '/assets/img/horse.jpg'
+  },
+  {
+    id: 2,
+    name: 'Barbara',
+    bio: `
+# About me
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua *
+## Lorem ipsum dolor sit amet ##
+I am a capybara.
+    `,
+    profilePicture: '/assets/img/capybara.jpg'
+  },
+  {
+    id: 3,
+    name: 'Doggo',
+    bio: `
+# Hola todos amigos
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua *
+~~ Lorem ipsum dolor sit amet ~~
+I am a doggo.
+
+[Here](https://www.github.com/) is my website.
+    `,
+    profilePicture: '/assets/img/dog.jpg'
   }
 ];
 
