@@ -4,3 +4,13 @@
 
 $primary: #456346;
 @import "bootstrap/scss/bootstrap";
+
+html {
+  height: 100%;
+  background: #f2f2f2;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

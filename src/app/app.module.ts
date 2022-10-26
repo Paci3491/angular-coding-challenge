@@ -6,12 +6,14 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { MarkupPipe } from '../utils/markup.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    MarkupPipe
   ],
   imports: [
     RouterModule,

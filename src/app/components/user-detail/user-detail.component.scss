@@ -1,0 +1,30 @@
+.detail-wrapper {
+  position: absolute;
+  top: 3rem;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    width: 20rem;
+    img {
+      align-self: center;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .card-title {
+      margin-top: 2rem;
+    }
+  }
+}
+

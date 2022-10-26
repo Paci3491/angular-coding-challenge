@@ -1,1 +1,13 @@
-<p>user-detail works!</p>
+<div class="detail-wrapper">
+
+  <div *ngIf="isLoading" class="spinner-border spinner" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <div *ngIf="!isLoading" class="card shadow-lg">
+    <img [src]="userDetail.profilePicture" class="card-img-top" [alt]="userDetail.name + 's profile picture'">
+    <h5 class="card-title"> {{userDetail.name}} </h5>
+    <p class="card-text" [innerHTML]="userDetail.bio | markup"></p>
+  </div>
+
+</div>
