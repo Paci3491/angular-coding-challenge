@@ -5,13 +5,10 @@
 <ng-container *ngIf="users$ | async as users">
   <div @fade class="card mb-4 p-4 shadow-lg" *ngFor="let user of users">
     <div class="row g-0">
-      <img [src]="user.profilePicture" class="img-fluid" [alt]="user.name + 's profile picture'">
-
+      <img [src]="user.profilePicture" class="profile-pic" [alt]="user.name + 's profile picture'">
       <div class="col-md-8 col-lg-9">
-        <div class="card-body">
-          <h5 class="card-title">{{user.name}}</h5>
-          <button class="btn btn-primary" (click)="redirectToDetail(user.id)">Show profile</button>
-        </div>
+        <h5 class="card-title m-lg-2">{{user.name}}</h5>
+        <button class="btn btn-primary" (click)="redirectToDetail(user.id)">Show profile</button>
       </div>
     </div>
   </div>

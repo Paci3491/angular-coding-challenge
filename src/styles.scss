@@ -1,13 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-
-// Import all of Bootstrap's CSS
-
 $primary: #456346;
 @import "bootstrap/scss/bootstrap";
 
 html {
   height: 100%;
-  //background: #f2f2f2;
 }
 
 body {
@@ -15,7 +10,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// SPINNER
+.profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .spinner-wrapper {
   display: flex;
   justify-content: center;
@@ -30,3 +29,4 @@ body {
     height: 5rem;
   }
 }
+

@@ -4,48 +4,45 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserData } from '../../../model/user-data';
 import { finalize } from 'rxjs';
 import { fadeIn } from '../../../utils/animations';
-import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss'],
-  animations: [ fadeIn ]
+  animations: [fadeIn]
 })
 export class UserDetailComponent implements OnInit {
 
-  private userId!: string;
   public userDetail!: UserData;
   public isLoading = false;
 
   constructor(private userService: UserService,
               private router: Router,
-              private location: Location,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.isLoading = true;
     this.getUserId();
-    this.getUser();
   }
 
   private getUserId(): void {
     this.route.params.subscribe(params => {
-      this.userId = params['id'];
+      this.getUser(+params['id'])
     })
   }
 
-  private getUser(): void {
-    this.userService.findOneById(+this.userId)
+  private getUser(userId: number): void {
+    this.userService.findOneById(userId)
       .pipe(finalize(() => this.isLoading = false))
       .subscribe((detail: UserData) => {
         this.userDetail = detail;
     }, () => {
-      this.router.navigate([''])
+      this.router.navigate(['/'])
     });
   }
 
-  redirectBack() {
-    this.location.back();
+  redirectToList() {
+    this.router.navigate(['/']);
   }
 }
